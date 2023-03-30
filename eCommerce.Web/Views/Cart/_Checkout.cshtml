@@ -12,6 +12,12 @@
                         <h4>@("PP.Checkout.ContactDetails".LocalizedString())</h4>
                         @{ Html.RenderPartial("_ContactDetails", Model); }
                     </div>
+
+                    <div class="billing-container">
+                        <h4>@("PP.Checkout.BillingDetails".LocalizedString())</h4>
+                        @{ Html.RenderPartial("_BillingInfo", Model); }
+                    </div>
+
                     <div class="shipping-container">
                         <h4>@("PP.Checkout.ShippingDetails".LocalizedString())</h4>
                         @{ Html.RenderPartial("_ShippingInfo", Model); }

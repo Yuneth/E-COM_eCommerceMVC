@@ -4935,6 +4935,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\_ExternalSocialScripts.cshtml" />
     <None Include="Properties\PublishProfiles\FolderPublish.pubxml" />
+    <Content Include="Views\Cart\_BillingInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">
