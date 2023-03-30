@@ -7,28 +7,32 @@
         <div class="form-row mb-3">
             <div class="col">
                 <label>@("PP.Checkout.Same With Billing Address".LocalizedString())</label>
-                <input class="check-box" data-val="true" style="height:20px;width:20px" id="IsBilling" name="IsBilling" type="checkbox" value="true" class="form-control" /><input name="IsBilling" type="hidden" value="false" class="form-control" />
+                <input class="check-box" data-val="true" style="height:20px;width:20px" id="IsBilling" name="IsBilling" type="checkbox" value="true" /><input name="IsBilling" type="hidden" value="false" class="form-control" />
             </div>
 
         </div>
         <div class="form-row mb-3">
             <div class="col">
                 <label>@("PP.Checkout.Country".LocalizedString())</label>
-                <input name="Country" id="Country" type="text" value="@Model.User.Country" class="form-control">
+                @*  <input name="Country" id="Country" type="text" value="@Model.User.Country" class="form-control">*@
+                <input name="Country" id="Country" type="text" value="" class="form-control">
             </div>
             <div class="col">
                 <label>@("PP.Checkout.City".LocalizedString())</label>
-                <input name="City" id="City" type="text" value="@Model.User.City" class="form-control">
+                <input name="City" id="City" type="text" value="" class="form-control">
+                @* <input name="City" id="City" type="text" value="@Model.User.City" class="form-control">*@
             </div>
         </div>
         <div class="form-row mb-3">
             <div class="col">
                 <label>@("PP.Checkout.Address".LocalizedString())</label>
-                <textarea name="Address" id="Address" class="form-control" style="border: 2px solid #ebebeb;">@Model.User.Address</textarea>
+                <textarea name="Address" id="Address" class="form-control" style="border: 2px solid #ebebeb;"></textarea>
+                @*<textarea name="Address" id="Address" class="form-control" style="border: 2px solid #ebebeb;">@Model.User.Address</textarea>*@
             </div>
             <div class="col">
                 <label>@("PP.Checkout.ZipCode".LocalizedString())</label>
-                <input name="ZipCode" id="ZipCode" type="text" value="@Model.User.ZipCode" class="form-control">
+                @*    <input name="ZipCode" id="ZipCode" type="text" value="@Model.User.ZipCode" class="form-control">*@
+                <input name="ZipCode" id="ZipCode" type="text" value="" class="form-control">
             </div>
         </div>
     </form>
