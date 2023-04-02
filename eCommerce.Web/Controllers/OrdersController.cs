@@ -153,6 +153,10 @@ namespace eCommerce.Web.Controllers
                     newOrder.CustomerCity = model.City;
                     newOrder.CustomerAddress = model.Address;
                     newOrder.CustomerZipCode = model.ZipCode;
+                    newOrder.BillingCity = model.BillingCity;
+                    newOrder.BillingCountry = model.BillingCountry;
+                    newOrder.BillingAddress = model.BillingAddress;
+                    newOrder.BillingZipCode = model.BillingZipCode;
 
                     newOrder.OrderItems = new List<OrderItem>();
                     foreach (var product in SessionHelper.CartItems.Select(x=>model.Products.FirstOrDefault(y=>y.ID == x.ItemID)))
@@ -369,6 +373,10 @@ namespace eCommerce.Web.Controllers
                     newOrder.CustomerCity = model.City;
                     newOrder.CustomerAddress = model.Address;
                     newOrder.CustomerZipCode = model.ZipCode;
+                    newOrder.BillingCity = model.BillingCity;
+                    newOrder.BillingCountry = model.BillingCountry;
+                    newOrder.BillingAddress = model.BillingAddress;
+                    newOrder.BillingZipCode = model.BillingZipCode;
 
                     newOrder.OrderItems = new List<OrderItem>();
                     foreach (var product in SessionHelper.CartItems.Select(x => model.Products.FirstOrDefault(y => y.ID == x.ItemID)))

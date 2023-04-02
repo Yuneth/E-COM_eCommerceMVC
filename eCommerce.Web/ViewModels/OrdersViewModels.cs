@@ -51,6 +51,22 @@ namespace eCommerce.Web.ViewModels
         [Display(Name = "ZipCode")]
         public string ZipCode { get; set; }
 
+        [Required]
+        [Display(Name = "Country")]
+        public string BillingCountry { get; set; }
+
+        [Required]
+        [Display(Name = "City")]
+        public string BillingCity { get; set; }
+
+        [Required]
+        [Display(Name = "Address")]
+        public string BillingAddress { get; set; }
+
+        [Required]
+        [Display(Name = "ZipCode")]
+        public string BillingZipCode { get; set; }
+
         public int PromoID { get; set; }
         public decimal Discount { get; set; }
 
@@ -89,6 +105,22 @@ namespace eCommerce.Web.ViewModels
         [Display(Name = "ZipCode")]
         public string ZipCode { get; set; }
 
+        [Required]
+        [Display(Name = "Country")]
+        public string BillingCountry { get; set; }
+
+        [Required]
+        [Display(Name = "City")]
+        public string BillingCity { get; set; }
+
+        [Required]
+        [Display(Name = "Address")]
+        public string BillingAddress { get; set; }
+
+        [Required]
+        [Display(Name = "ZipCode")]
+        public string BillingZipCode { get; set; }
+
         public int PromoID { get; set; }
         public decimal Discount { get; set; }
 
@@ -96,6 +128,7 @@ namespace eCommerce.Web.ViewModels
 
         public List<int> ProductIDs { get; set; }
         public List<Product> Products { get; set; }
+
     }
 
     public class PlaceOrderPayPalViewModel : PlaceOrderCashOnDeliveryViewModel

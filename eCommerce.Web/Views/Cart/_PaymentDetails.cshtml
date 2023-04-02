@@ -334,7 +334,7 @@
             $.ajax({
                 url: '@Url.PlaceOrder()',
                 type: "POST",
-                data: $("#contactDetailsForm").serialize() + "&" + $("#shippingDetailsForm").serialize() + "&" + $("#creditCardForm").serialize()
+                data: $("#contactDetailsForm").serialize() + "&" + $("#shippingDetailsForm").serialize() + "&" + $("#creditCardForm").serialize() + "&" + $("#billingDetailsForm").serialize()
             })
             .done(function (response) {
                 removeLoader("checkout-holder");
@@ -362,6 +362,7 @@
             $("#contactDetailsForm").valid();
             $("#shippingDetailsForm").valid();
             $("#creditCardForm").valid();
+            $("#billingDetailsForm").valid();
 
             Swal.fire("@("PP.Message.Warning".LocalizedString())", "@("PP.Checkout.Validations.PleaseCompleteRequiredFields".LocalizedString())", "warning");
         }
@@ -373,7 +374,7 @@
             $.ajax({
                 url: '@Url.PlaceOrder(isCashOnDelivery:true)',
                 type: "POST",
-                data: $("#contactDetailsForm").serialize() + "&" + $("#shippingDetailsForm").serialize()
+                data: $("#contactDetailsForm").serialize() + "&" + $("#shippingDetailsForm").serialize() + "&" + $("#billingDetailsForm").serialize()
             })
             .done(function (response) {
                 removeLoader("checkout-holder");

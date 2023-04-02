@@ -16,6 +16,10 @@ namespace eCommerce.Entities
         public string CustomerCity { get; set; }
         public string CustomerAddress { get; set; }
         public string CustomerZipCode { get; set; }
+        public string BillingCountry { get; set; }
+        public string BillingCity { get; set; }
+        public string BillingAddress { get; set; }
+        public string BillingZipCode { get; set; }
 
         public string OrderCode { get; set; }
         public int PaymentMethod { get; set; }

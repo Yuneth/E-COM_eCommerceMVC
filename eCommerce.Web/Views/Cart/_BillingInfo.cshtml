@@ -8,21 +8,21 @@
         <div class="form-row mb-3">
             <div class="col">
                 <label>@("PP.Checkout.Country".LocalizedString())</label>
-                <input name="Country" type="text" value="@Model.User.Country" class="form-control">
+                <input name="BillingCountry" type="text" value="@Model.User.Country" class="form-control">
             </div>
             <div class="col">
                 <label>@("PP.Checkout.City".LocalizedString())</label>
-                <input name="City" type="text" value="@Model.User.City" class="form-control">
+                <input name="BillingCity" type="text" value="@Model.User.City" class="form-control">
             </div>
         </div>
         <div class="form-row mb-3">
             <div class="col">
                 <label>@("PP.Checkout.Address".LocalizedString())</label>
-                <textarea name="Address" class="form-control" style="border: 2px solid #ebebeb;">@Model.User.Address</textarea>
+                <textarea name="BillingAddress" class="form-control" style="border: 2px solid #ebebeb;">@Model.User.Address</textarea>
             </div>
             <div class="col">
                 <label>@("PP.Checkout.ZipCode".LocalizedString())</label>
-                <input name="ZipCode" type="text" value="@Model.User.ZipCode" class="form-control">
+                <input name="BillingZipCode" type="text" value="@Model.User.ZipCode" class="form-control">
             </div>
         </div>
     </form>

@@ -242,6 +242,43 @@
             <div class="card">
                 <div class="card-header">
                     <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#billingDetails">
+                            @("PP.Tracking.BillingDetails".LocalizedString())
+                        </button>
+                    </h2>
+                </div>
+                <div id="billingDetails" class="collapse" data-parent="#orderTrackingAccordion">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label text-right">@("PP.Tracking.ShippingCountry".LocalizedString())</label>
+                            <div class="col-sm-10">
+                                <input name="Country" type="text" value="@Model.Order.BillingCountry" class="form-control disabled" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label text-right">@("PP.Tracking.ShippingCity".LocalizedString())</label>
+                            <div class="col-sm-10">
+                                <input name="City" type="text" value="@Model.Order.BillingCity" class="form-control disabled" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label text-right">@("PP.Tracking.ShippingAddress".LocalizedString())</label>
+                            <div class="col-sm-10">
+                                <textarea name="Address" class="form-control disabled" disabled>@Model.Order.BillingAddress</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-0">
+                            <label class="col-sm-2 col-form-label text-right">@("PP.Tracking.ShippingZipCode".LocalizedString())</label>
+                            <div class="col-sm-10">
+                                <input name="ZipCode" type="text" value="@Model.Order.BillingZipCode" class="form-control disabled" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#shippingDetails">
                             @("PP.Tracking.ShippingDetails".LocalizedString())
                         </button>
