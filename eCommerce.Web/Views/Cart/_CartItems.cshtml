@@ -45,7 +45,7 @@
     }
 
     var totalAmount = subTotalAmount - discount + ConfigurationsHelper.FlatDeliveryCharges;
-    
+
     var IslazyLoadImage = !Request.IsAjaxRequest();
 
     <form class="cart-form">
@@ -70,7 +70,7 @@
                         var thumbnail = PictureHelper.GetProductThumbnail(product.ProductPictures, product.ThumbnailPictureID);
 
                         var productPrice = product.Discount.HasValue && product.Discount.Value > 0 ? product.Discount.Value : product.Price;
-                        
+
                         var sanitizedSEOTitle = AppDataHelper.CurrentLanguage.ShortCode == LanguagesHelper.EnglishLanguageShortCode && currentLanguageProductRecord != null ? currentLanguageProductRecord.Name.SanitizeLowerString() : string.Empty;
 
                         <tr class="pDetail" data-id="@product.ID" data-container="response-holder">
