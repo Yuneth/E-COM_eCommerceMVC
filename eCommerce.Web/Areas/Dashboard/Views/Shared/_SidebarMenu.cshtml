@@ -62,18 +62,25 @@
             <span>@("Dashboard.Menu.Roles".Localized())</span>
         </a>
     </li>
+
+    <li class="nav-item @Html.MenuItemClass("Report")">
+        <a class="nav-link" href="@Url.ListAction("Report")">
+            <i class="mr-1 fas fa-users-cog"></i>
+            <span>@("Dashboard.Menu.Report".Localized())</span>
+        </a>
+    </li>
     @*<li class="nav-item @Html.MenuItemClass("Dashboard", "NewsletterSubscribers")">
-        <a class="nav-link" href="@Url.NewsletterSubscribers()">
-            <i class="mr-1 fas fa-newspaper"></i>
-            <span>@("Dashboard.Menu.NewsletterSubscribers".Localized())</span>
-        </a>
-    </li>*@
+            <a class="nav-link" href="@Url.NewsletterSubscribers()">
+                <i class="mr-1 fas fa-newspaper"></i>
+                <span>@("Dashboard.Menu.NewsletterSubscribers".Localized())</span>
+            </a>
+        </li>*@
     @*<li class="nav-item @Html.MenuItemClass("Languages")">
-        <a class="nav-link" href="@Url.ListAction("Languages")">
-            <i class="fas fa-language"></i>
-            <span>@("Dashboard.Menu.Languages".Localized())</span>
-        </a>
-    </li>*@
+            <a class="nav-link" href="@Url.ListAction("Languages")">
+                <i class="fas fa-language"></i>
+                <span>@("Dashboard.Menu.Languages".Localized())</span>
+            </a>
+        </li>*@
     <li class="nav-item @Html.MenuItemClass("Configurations")">
         <a class="nav-link" href="@Url.ListAction("Configurations")">
             <i class="mr-1 fas fa-cogs"></i>

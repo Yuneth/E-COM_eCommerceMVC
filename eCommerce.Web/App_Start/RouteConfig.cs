@@ -485,6 +485,52 @@ namespace eCommerce.Web
             );
 
             routes.MapRoute(
+            name: "PrintProducts",
+            url: "print-products",
+            defaults: new { area = "", controller = "Report", action = "PrintProducts" },
+            namespaces: new[] { "eCommerce.Web.Controllers" }
+        );
+
+
+            routes.MapRoute(
+                name: "LanguageBased_PrintProducts",
+                url: "{lang}/print-products",
+                defaults: new { area = "", controller = "Report", action = "PrintProducts" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+               name: "PrintCategories",
+               url: "print-categories",
+               defaults: new { area = "", controller = "Report", action = "PrintCategories" },
+               namespaces: new[] { "eCommerce.Web.Controllers" }
+           );
+
+
+            routes.MapRoute(
+                name: "LanguageBased_PrintCategories",
+                url: "{lang}/print-categories",
+                defaults: new { area = "", controller = "Report", action = "PrintCategories" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+            routes.MapRoute(
+               name: "PrintOrders",
+               url: "print-orders",
+               defaults: new { area = "", controller = "Report", action = "PrintOrders" },
+               namespaces: new[] { "eCommerce.Web.Controllers" }
+           );
+
+
+            routes.MapRoute(
+                name: "LanguageBased_PrintOrders",
+                url: "{lang}/print-orders",
+                defaults: new { area = "", controller = "Report", action = "PrintOrders" },
+                namespaces: new[] { "eCommerce.Web.Controllers" }
+            );
+
+
+            routes.MapRoute(
                 name: "FeaturedProducts",
                 url: "featured-products",
                 defaults: new { area = "", controller = "Products", action = "FeaturedProducts" },

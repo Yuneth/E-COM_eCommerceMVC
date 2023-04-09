@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace eCommerce.Services
 {
+    // send email using send api for user login
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)
@@ -33,6 +34,7 @@ namespace eCommerce.Services
             }
         }
 
+        // send email for order
         public Task SendToEmailAsync(string fromEmailAddressName, string fromEmailAddress, string toEmailAddress, string toEmailSubject, string toEmailBody)
         {
             try

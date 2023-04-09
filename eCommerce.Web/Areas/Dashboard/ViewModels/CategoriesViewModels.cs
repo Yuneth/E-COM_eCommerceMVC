@@ -7,6 +7,8 @@ using System.Web;
 
 namespace eCommerce.Web.Areas.Dashboard.ViewModels
 {
+
+    // CategoriesListingViewModel
     public class CategoriesListingViewModel : PageViewModel
     {
         public List<Category> Categories { get; set; }
@@ -17,7 +19,9 @@ namespace eCommerce.Web.Areas.Dashboard.ViewModels
 
         public Pager Pager { get; set; }
     }
-    
+
+
+    //CategoryActionViewModel
     public class CategoryActionViewModel : PageViewModel
     {
         public int CategoryID { get; set; }

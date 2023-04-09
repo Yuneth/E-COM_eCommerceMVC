@@ -527,6 +527,60 @@ namespace eCommerce.Shared.Helpers
             return routeURL.ToLower();
         }
 
+        public static string PrintProducts(this UrlHelper helper, int orderID)
+        {
+            string routeURL = string.Empty;
+
+            var routeValues = new RouteValueDictionary();
+
+            routeValues.Add("orderID", orderID);
+
+            if (ConfigurationsHelper.EnableMultilingual)
+            {
+                routeURL = helper.RouteUrl("LanguageBased_PrintProducts", routeValues);
+            }
+            else routeURL = helper.RouteUrl("PrintProducts", routeValues);
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string PrintCategories(this UrlHelper helper, int orderID)
+        {
+            string routeURL = string.Empty;
+
+            var routeValues = new RouteValueDictionary();
+
+            routeValues.Add("orderID", orderID);
+
+            if (ConfigurationsHelper.EnableMultilingual)
+            {
+                routeURL = helper.RouteUrl("LanguageBased_PrintCategories", routeValues);
+            }
+            else routeURL = helper.RouteUrl("PrintCategories", routeValues);
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
+        public static string PrintOrders(this UrlHelper helper, int orderID)
+        {
+            string routeURL = string.Empty;
+
+            var routeValues = new RouteValueDictionary();
+
+            routeValues.Add("orderID", orderID);
+
+            if (ConfigurationsHelper.EnableMultilingual)
+            {
+                routeURL = helper.RouteUrl("LanguageBased_PrintOrders", routeValues);
+            }
+            else routeURL = helper.RouteUrl("PrintOrders", routeValues);
+
+            routeURL = HttpUtility.UrlDecode(routeURL, System.Text.Encoding.UTF8);
+            return routeURL.ToLower();
+        }
+
         public static string UploadPictures(this UrlHelper helper)
         {
             string routeURL = string.Empty;

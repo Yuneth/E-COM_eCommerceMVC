@@ -8,6 +8,8 @@ using System.Web;
 
 namespace eCommerce.Web.Areas.Dashboard.ViewModels
 {
+
+    
     public class UsersListingViewModel : PageViewModel
     {
         public string SearchTerm { get; set; }

@@ -7,6 +7,9 @@
 
 @if (Model != null && Model.Product != null)
 {
+
+
+
     var currentLanguageProductRecord = Model.Product.ProductRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
 
     var currentLanguageCategoryRecord = Model.Product.Category.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
@@ -30,6 +33,7 @@
 
     var haveParentCategory = Model.Product.Category != null && Model.Product.Category.ParentCategory != null;
 
+    System.Diagnostics.Debug.WriteLine(Model.Product.Category.SanitizedName);
     var productStockTextColor = Model.Product.StockQuantity > 0 ? "text-success bold" : "text-danger bold";
 
     <div class="breacrumb-section">
@@ -43,6 +47,7 @@
                         </a>
                         @if (haveParentCategory)
                         {
+
                             var currentLanguageParentCategoryRecord = Model.Product.Category.ParentCategory.CategoryRecords.FirstOrDefault(x => x.LanguageID == AppDataHelper.CurrentLanguage.ID);
 
                             <a href="@Url.SearchProducts(category: Model.Product.Category.ParentCategory.SanitizedName)">@(currentLanguageParentCategoryRecord != null ? currentLanguageParentCategoryRecord.Name : string.Empty)</a>
@@ -182,7 +187,18 @@
                                     </strong>
                                 }
                             </div>
-                            if (false)
+
+                            <br />
+                            <div>
+                                @*  <a href="#customized-tab" class="btnAddToCart pointerCursor primary-btn pd-cart text-white">@("PP.Shopping.Customized".Localized())</a>*@
+                                @**@    <a href="#customized-tab"><Button style="background-color: black; border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 14px;" id="btnCustomized">Default Configurations</Button></a>
+                                @*<a  href="#customized-tab" >@("PP.ProductDetails.CustomizedSpecifications".Localized())</a>*@
+                            </div>
+
+                            <br />
+                            <br />
+
+                            if (Model.Product.Category.SanitizedName == "home-premium")
                             {
                                 <div class="pd-color">
                                     <h6>Color</h6>
@@ -192,32 +208,52 @@
                                             <label for="cc-black"></label>
                                         </div>
                                         <div class="cc-item">
-                                            <input type="radio" id="cc-yellow">
-                                            <label for="cc-yellow" class="cc-yellow"></label>
+                                            <input type="radio">
+                                            <label class="cc-gray" style="background-color:gray"></label>
                                         </div>
                                         <div class="cc-item">
-                                            <input type="radio" id="cc-violet">
-                                            <label for="cc-violet" class="cc-violet"></label>
+                                            <input type="radio" id="cc-white">
+                                            <label for="cc-white" class="cc-white" style="background-color:#c76d6d"></label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="pd-size-choose">
-                                    <h6>Sizes</h6>
+                                    <h6>Processor</h6>
                                     <div class="sc-item">
                                         <input type="radio" id="sm-size">
-                                        <label for="sm-size">s</label>
+                                        <label for="sm-size">I3</label>
                                     </div>
                                     <div class="sc-item">
                                         <input type="radio" id="md-size">
-                                        <label for="md-size">m</label>
+                                        <label for="md-size">I5</label>
                                     </div>
                                     <div class="sc-item">
                                         <input type="radio" id="lg-size">
-                                        <label for="lg-size">l</label>
+                                        <label for="lg-size">I7</label>
                                     </div>
                                     <div class="sc-item">
                                         <input type="radio" id="xl-size">
-                                        <label for="xl-size">xs</label>
+                                        <label for="xl-size">I11</label>
+                                    </div>
+                                </div>
+
+                                <div class="pd-size-choose">
+                                    <h6>RAM</h6>
+                                    <div class="sc-item">
+                                        <input type="radio" id="sm-size">
+                                        <label for="sm-size">4 GB</label>
+                                    </div>
+                                    <div class="sc-item">
+                                        <input type="radio" id="md-size">
+                                        <label for="md-size">8 GB</label>
+                                    </div>
+                                    <div class="sc-item">
+                                        <input type="radio" id="lg-size">
+                                        <label for="lg-size">16 GB</label>
+                                    </div>
+                                    <div class="sc-item">
+                                        <input type="radio" id="xl-size">
+                                        <label for="xl-size">32 GB</label>
                                     </div>
                                 </div>
                             }
@@ -258,8 +294,12 @@
                         @if (currentLanguageProductRecord != null && currentLanguageProductRecord.ProductSpecifications != null && currentLanguageProductRecord.ProductSpecifications.Count > 0)
                         {
                             <li>
-                                <a data-toggle="tab" href="#specification-tab" role="tab">@("PP.ProductDetails.ProductSpecifications".Localized())</a>
+                                <a data-toggle="tab" href="#specification-tab" role="tab">@("PP.ProductDetails.DefaultSpecifications".Localized())</a>
                             </li>
+
+                            @*<li>
+                                    <a data-toggle="tab" href="#customized-tab" role="tab">@("PP.ProductDetails.CustomizedSpecifications".Localized())</a>
+                                </li>*@
                         }
                         <li>
                             <a data-toggle="tab" href="#reviews-tab" role="tab" class="active">@("PP.ProductDetails.Reviews".Localized())</a>
@@ -281,6 +321,10 @@
                             <div class="tab-pane fade" id="specification-tab" role="tabpanel">
                                 @{ Html.RenderPartial("_ProductSpecifications", currentLanguageProductRecord.ProductSpecifications); }
                             </div>
+                            @* <div class="tab-pane fade" id="customized-tab" role="tabpanel">
+                                    @{ Html.RenderPartial("_ProductSpecifications", currentLanguageProductRecord.ProductSpecifications); }
+                                </div>*@
+
                         }
                         <div class="tab-pane fade active show" id="reviews-tab" role="tabpanel">
                             @{ Html.RenderAction("ProductComments", "Comments", new { productID = Model.Product.ID, recordSize = 10 }); }
@@ -298,6 +342,11 @@
     if ($("#imgZoom1").length > 0) {
         applyDriftOnElement("#imgZoom1");
     }
+
+    $('#btnCustomized').click(function (e) {
+        e.preventDefault();
+        $('a[href="#specification-tab"]').tab('show');
+    })
 
     $('#carouselIndicators').on('slide.bs.carousel', function onSlide(ev) {
         var elemID = $("img", ev.relatedTarget).attr("id");

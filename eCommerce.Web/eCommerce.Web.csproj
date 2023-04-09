@@ -237,6 +237,7 @@
     <Compile Include="Areas\Dashboard\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\PromosController.cs" />
+    <Compile Include="Areas\Dashboard\Controllers\ReportController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\RolesController.cs" />
     <Compile Include="Areas\Dashboard\Controllers\UsersController.cs" />
     <Compile Include="Areas\Dashboard\DashboardAreaRegistration.cs" />
@@ -257,6 +258,7 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\PublicBaseController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -4932,10 +4934,15 @@
   <ItemGroup>
     <Content Include="Areas\Dashboard\Views\Dashboard\NewsletterSubscribers.cshtml" />
     <Content Include="Areas\Dashboard\Views\Dashboard\_NewsletterSubscribersListing.cshtml" />
+    <Content Include="Areas\Dashboard\Views\Report\index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_ExternalSocialScripts.cshtml" />
     <None Include="Properties\PublishProfiles\FolderPublish.pubxml" />
     <Content Include="Views\Cart\_BillingInfo.cshtml" />
+    <Content Include="Views\Report\index.cshtml" />
+    <Content Include="Views\Report\_PrintCategories.cshtml" />
+    <Content Include="Views\Report\_PrintOrders.cshtml" />
+    <Content Include="Views\Report\_PrintProducts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\eCommerce.Data\eCommerce.Data.csproj">

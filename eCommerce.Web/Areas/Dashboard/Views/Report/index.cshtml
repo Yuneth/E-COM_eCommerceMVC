@@ -1,0 +1,95 @@
+﻿@model eCommerce.Web.Areas.Dashboard.ViewModels.OrderDetailsViewModel
+
+@{
+    if (Model != null)
+    {
+        Model.PageTitle = "Dashboard.OrderDetails.Title".LocalizedString();
+        Model.PageDescription = "Dashboard.OrderDetails.Description".LocalizedString();
+        Model.PageURL = Url.DetailsAction("Orders", Model.Order.ID);
+        Model.PageImageURL = PictureHelper.PageImageURL("orders.jpg");
+    }
+}
+<div class="page-info-container">
+    <h3 class="h3 mb-2 text-gray-800">
+        <span>Reports</span>
+
+    </h3>
+    <p>
+
+
+        Report Listings
+    </p>
+    <div class="row">
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Product report
+                            </div>
+                            <a class="card-body-heading-anchor" href="@Url.PrintProducts(2)" target="_blank">
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                    @("Dashboard.OrderDetails.PrintProducts".Localized())
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+
+
+
+                    <hr />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-secondary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Catergory Report
+                            </div>
+                            <a class="card-body-heading-anchor" href="@Url.PrintCategories(2)" target="_blank">
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                    @("Dashboard.OrderDetails.PrintCategories".Localized())
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-sitemap fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Order History
+                            </div>
+                            <a class="card-body-heading-anchor" href="@Url.PrintOrders(2)" target="_blank">
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                    @("Dashboard.OrderDetails.PrintOrders".Localized())
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-funnel-dollar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
